@@ -1,3 +1,3 @@
-require './lib/router'
+require './router'
 
 run Router

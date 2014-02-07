@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require './lib/router'
+require './router'
 require 'rack/test'
 
 describe Router do
