@@ -1,4 +1,4 @@
-require 'sinatra'
+require 'sinatra/base'
 require 'haml'
 
 class Router < Sinatra::Base
