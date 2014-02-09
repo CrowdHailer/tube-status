@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'haml'
 
+require './lib/statusController'
+
 class Router < Sinatra::Base
 	set :static, true
 	# set :public_dir, 'public'
@@ -9,6 +11,10 @@ class Router < Sinatra::Base
 
 	get '/' do
 		haml :index
+	end
+
+	get '/status*' do
+		StatusController.call(env)
 	end
 
 	get "/public/stylesheets/reset.css" do
