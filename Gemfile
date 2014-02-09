@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'puma'
 gem 'haml'
+gem 'nokogiri'
 
 group :test, :development do
 	gem 'rspec'
