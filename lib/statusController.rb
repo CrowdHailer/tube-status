@@ -1,5 +1,7 @@
+require 'sinatra/json'
+
 class StatusController < Sinatra::Base
 	get '/status/lines' do
-		"Dave"
+		json "Dave"
 	end
 end
