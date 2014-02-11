@@ -18,4 +18,14 @@ describe StatusController do
 		get '/status/lines'
 		expect(last_response.content_type).to eq('application/json;charset=utf-8')
 	end
+
+	it 'should return a response for line status query' do
+		get '/status/weekend'
+		expect(last_response).to be_ok
+	end
+
+	it 'should return JSON data' do
+		get '/status/weekend'
+		expect(last_response.content_type).to eq('application/json;charset=utf-8')
+	end
 end

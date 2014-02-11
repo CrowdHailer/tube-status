@@ -18,17 +18,18 @@ class StatusController < Sinatra::Base
 			long = (status/'./Message/Text').text
 			output << {name: name, msg: msg, long: long}
 		end
+		puts doc.class
 		json output
 	end
 
 	get '/status/lines' do
 		doc = Nokogiri::XML(open(TRACKER_NET_ROOT + '/linestatus'))
 		output = []
-		(doc).each do |line|
-			name = (line/'./Line')
-			output << {name: name}
-			puts "dave"
+		doc.search('Line').each do |line|
+			output << { name: line['Name'] }
 		end
-		json doc
+		puts output.inspect
+		#puts doc.class
+		json output
 	end
 end
